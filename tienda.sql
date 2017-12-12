@@ -3,7 +3,8 @@ SQLyog Enterprise - MySQL GUI v6.56
 MySQL - 5.0.45-community-nt : Database - mitienda
 *********************************************************************
 */
-
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`mitienda` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `mitienda`;
 /*!40101 SET NAMES utf8 */;
 
 /*!40101 SET SQL_MODE=''*/;
