@@ -1,0 +1,47 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Stores</h3>
+    </div>
+    <div class="panel-body">
+        <!--<p data-ng-repeat="store in ::SLC.stores track by $index">
+            {{$index + 1}}. <a data-ui-sref="root.mountains.mountain.details({mountainId: mountain.id})">
+                <span>{{store.mountain}}</span>
+                <span class="glyphicon glyphicon-info-sign"></span>
+            </a>
+        </p>-->
+        
+        
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <!--<th class="col-xs-1">No.</th>-->
+                        <th class="col-xs-2">Store Id</th>
+                        <th class="col-xs-10">Store Name</th>
+                        <!--<th class="col-xs-1">Date</th>
+                        <th class="col-xs-1">Ico</th>-->
+                        <!--<th class="col-xs-8">Delete</th>-->
+                    </tr>
+                </thead>
+                <tr data-ng-repeat="store in SLC.stores| filter: search" class="repeat-animation">
+                    <!--<td>{{$index + 1}}. </td>-->
+                    <td><span class="done-{{store.done}}">{{store.id}}</span></td>
+                    <td><span class="done-{{store.done}}">{{store.store_name}}</span></td>
+                    <!--<td><span class="done-{{todo.done}}">{{todo.date}}</span></td>
+                    <td><span class="glyphicon glyphicon-{{todo.type.gico}} done-{{todo.done}}" title="{{todo.type.name}}"></span></td>-->
+                    <!--<td><input type="checkbox" data-ng-model="store.selected" title="check to delete" value={{store.id}} /></td>-->
+                </tr>
+            </table>
+        </div>
+        
+        
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <!--<button id="delete-btn" class="btn btn-danger" data-ng-click="SLC.deleteCompleted()">
+            Delete completed <span class="glyphicon glyphicon-remove"></span></button>-->
+        <button id="add-btn" data-ui-sref="root.stores.new" class="btn btn-success">
+            Add Store <span class="glyphicon glyphicon-plus"></span></button>
+    </div>
+</div>

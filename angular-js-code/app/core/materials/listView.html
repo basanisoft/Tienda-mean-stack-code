@@ -1,0 +1,37 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Materials</h3>
+    </div>
+    <div class="panel-body">
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <!--<th class="col-xs-1">No.</th>-->
+                        <th class="col-xs-2">Materials Id</th>
+                        <th class="col-xs-10">Materials Name</th>
+                        <!--<th class="col-xs-1">Date</th>
+                        <th class="col-xs-1">Ico</th>-->
+                        <!--<th class="col-xs-8">Delete</th>-->
+                    </tr>
+                </thead>
+                <tr data-ng-repeat="material in MLC.materials| filter: search" class="repeat-animation">
+                    <!--<td>{{$index + 1}}. </td>-->
+                    <td><span class="done-{{material.done}}">{{material.id}}</span></td>
+                    <td><span class="done-{{material.done}}">{{material.name}}</span></td>
+
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <!--<button id="delete-btn" class="btn btn-danger" data-ng-click="SLC.deleteCompleted()">
+            Delete completed <span class="glyphicon glyphicon-remove"></span></button>-->
+        <button id="add-btn" data-ui-sref="root.materials.new" class="btn btn-success">
+            Add Material <span class="glyphicon glyphicon-plus"></span></button>
+    </div>
+</div>

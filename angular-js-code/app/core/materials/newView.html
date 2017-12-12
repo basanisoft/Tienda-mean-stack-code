@@ -1,0 +1,20 @@
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">Add Material</h3>
+    </div>
+    <div class="panel-body">
+        <form name="form" data-ng-submit="MNC.addMaterial()">
+            <div class="form-group">
+                <label class="control-label" for="materialName">material Name:</label>
+                <input id="materialName" class="form-control" name="materialName" type="text" data-ng-model="MNC.formData.materialName" required />
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="materialDescription">Material description:</label>
+                <input id="materialDescription" class="form-control" name="materialDescription" type="text" data-ng-model="MNC.formData.materialDescription" required />
+            </div>
+
+            <button id="add-btn" class="btn btn-success" data-ng-disabled="form.$invalid">Add <span class="glyphicon glyphicon-ok"></span></button>
+        </form>
+    </div>
+</div>
