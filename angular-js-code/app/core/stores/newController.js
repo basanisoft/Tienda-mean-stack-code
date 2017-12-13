@@ -46,7 +46,7 @@
                 }),
                 contentType: 'application/json',
                 success: function(data) {
-
+					location.reload();
                 },
                 error: function(data) {
                     alert("err:" + JSON.stringify(data));

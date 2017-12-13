@@ -51,7 +51,7 @@
         }
 
         function addStoreMaterial() {
-            alert(vm.formData.store);
+            //alert(vm.formData.store);
             var query = 'mutation {  storematerialCreate(material_id: "' + vm.formData.material + '",store_id:"' + vm.formData.store + '",quantity:"' + vm.formData.quantity + '",created_at:"2017-12-11 00:00:00"){ id material{id} store{id}     quantity  }}';
 
             $.ajax({
@@ -62,9 +62,10 @@
                 }),
                 contentType: 'application/json',
                 success: function(data) {
-                    alert("Material Quantity is added to Store");
+                    //alert("Material Quantity is added to Store");
                     $('#storeMaterialForm').slideToggle();
-                    alert(JSON.stringify(data));
+                    //alert(JSON.stringify(data));
+					location.reload();
                 },
                 error: function(data) {
                     alert("err:" + JSON.stringify(data));

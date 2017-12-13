@@ -11,7 +11,6 @@
         var vm = this;
 
         vm.materials = materialsService.getAll();
-
         vm.deleteCompleted = deleteCompleted;
 
         function deleteCompleted() {

@@ -18,9 +18,7 @@
         };
 
         function addMaterial() {
-            alert(1);
             var query = 'mutation {  materialCreate(name: "' + vm.formData.materialName + '",description:"' + vm.formData.materialDescription + '",price:"100",image:"ggg.gif"){ id name       description  }}';
-
 
             $.ajax({
                 method: 'post',
@@ -30,7 +28,7 @@
                 }),
                 contentType: 'application/json',
                 success: function(data) {
-
+                location.reload();
                 },
                 error: function(data) {
                     alert("err:" + JSON.stringify(data));

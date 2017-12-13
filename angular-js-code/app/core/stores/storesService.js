@@ -24,6 +24,7 @@
         $.ajax({
             method: 'post',
             url: 'http://localhost:8088/graphql',
+			async: false,
             data: JSON.stringify({
                 query: query
             }),
