@@ -14,6 +14,7 @@
 
         function deleteCompleted() {
             $scope.IC.todos = $scope.IC.todos.filter(function(item) {
+				//alert(JSON.stringify(item.done));
                 return !item.done;
             });
         }

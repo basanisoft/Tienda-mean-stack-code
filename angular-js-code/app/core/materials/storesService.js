@@ -15,8 +15,9 @@
             getAll: getAll,
             getById: getById
         };
-
-        function getAll() {
+		
+		function getAll() {
+				 
 
             //var materials;	
             var query = "{materials{    id,    name }}";
@@ -38,7 +39,8 @@
 
             });
             return materials;
-        }
+        
+			}
 
         function getById(id) {
             var result = null;

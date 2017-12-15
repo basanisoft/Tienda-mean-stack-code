@@ -23,6 +23,7 @@
         function getTodos() {
             return todosService.getTodos()
                 .then(function(data) {
+					
                     vm.todos = data;
                     return vm.todos;
                 });

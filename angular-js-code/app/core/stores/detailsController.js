@@ -9,10 +9,9 @@
 
     function StoresDetailsController($stateParams, $state, storesService) {
         var vm = this;
+		vm.store = storesService.getById($stateParams.storeId);
 
         vm.delete = deleteById;
-        vm.store = storesService.getById($stateParams.storeId);
-
         function deleteById(storeId) {
             storesService.deleteById(storeId);
             $state.go('root.stores.list');

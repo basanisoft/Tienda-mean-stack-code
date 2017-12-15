@@ -5,9 +5,9 @@
 
     .controller('StoresNewController', StoresNewController);
 
-    StoresNewController.$inject = ['$scope', '$state', '$log', 'categoriesService'];
+    StoresNewController.$inject = ['$http','$scope', '$state', '$log', 'categoriesService'];
 
-    function StoresNewController($scope, $state, $log, categoriesService) {
+    function StoresNewController($http, $scope, $state, $log, categoriesService) {
         var vm = this;
 
         vm.addStore = addStore;
@@ -36,23 +36,22 @@
         function addStore() {
 
             var query = 'mutation {  storeCreate(store_name: "' + vm.formData.storeName + '",description:"' + vm.formData.storeDescription + '"){ id store_name       description  }}';
-
-
-            $.ajax({
-                method: 'post',
-                url: 'http://localhost:8088/graphql',
-                data: JSON.stringify({
-                    query: query
-                }),
-                contentType: 'application/json',
-                success: function(data) {
-					location.reload();
-                },
-                error: function(data) {
-                    alert("err:" + JSON.stringify(data));
+			
+			var config = {
+                headers : {
+					'Content-Type': 'application/json'
                 }
+            }
 
-            });
+			$http.post('http://localhost:8088/graphql', JSON.stringify({query: query}), config)
+		     .then(
+			   function(response){
+				 location.reload();
+			   }, 
+			   function(response){
+				 // failure callback
+			   }
+			);
 
 
             vm.formData.newStore = '';
